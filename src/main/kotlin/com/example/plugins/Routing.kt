@@ -14,4 +14,11 @@ fun Application.configureRouting() {
             call.respondText("Hello World!")
         }
     }
+    routing {
+        get(path = "/login"){
+            var name: String? =call.request.queryParameters["name"]
+            print(name)
+            call.respondText("Yes $name Your new account will get created")
+        }
+    }
 }
